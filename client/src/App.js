@@ -25,28 +25,20 @@ const client = new ApolloClient({
 });
 
 
-// DONT FORGET TO UPDATE BELOW SECTION //
 function App() {
   return (
-    <Router>
-      <>
-        <Navbar />
-        <Routes>
-          <Route 
-            path='/' 
-            element={<SearchBooks />} 
-          />
-          <Route 
-            path='/saved' 
-            element={<SavedBooks />} 
-          />
-          <Route 
-            path='*'
-            element={<h1 className='display-2'>Wrong page!</h1>}
-          />
-        </Routes>
-      </>
-    </Router>
+    <ApolloProvider client={client}>
+      <Router>
+        <>
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={SearchBooks} />
+            <Route exact path="/saved" component={SavedBooks} />
+            <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
+          </Switch>
+        </>
+      </Router>
+    </ApolloProvider>
   );
 }
 
