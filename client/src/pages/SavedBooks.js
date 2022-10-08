@@ -13,6 +13,7 @@ const SavedBooks = () => {
 
   const userData = data?.me || {};
 
+  console.log(userData)
 
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteBook = async (bookId) => {
@@ -53,7 +54,6 @@ const SavedBooks = () => {
         </h2>
         <CardColumns>
           {userData.savedBooks.map((book) => {
-            console.log(book)
             return (
               <Card key={book.bookId} border='dark'> ()
                 {book.image ? <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' /> : null}
