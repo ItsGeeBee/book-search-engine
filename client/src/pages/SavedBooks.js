@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 
 import { useMutation, useQuery } from "@apollo/client";
@@ -40,7 +40,7 @@ const SavedBooks = () => {
     }
   };
 
-  
+
   if (loading) {
     return <h2>LOADING...</h2>;
   }
