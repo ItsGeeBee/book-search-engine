@@ -16,6 +16,6 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
-    "mongoose": "^6.4.7"
+    "apollo-server-express": "^2.15.0"
   }
 }
